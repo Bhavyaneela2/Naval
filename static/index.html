@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Naval Threat Surveillance</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+    <div class="brand"><i class="fas fa-anchor"></i> NAVAL HYDRO SYSTEM</div>
+    <div class="status"><i class="fas fa-circle" style="font-size:10px;"></i> SYSTEM ONLINE</div>
+</nav>
+<div class="container">
+    <!-- PAGE 1 -->
+    <div id="page-1">
+        <h2><i class="fas fa-crosshairs"></i> Target Acquisition</h2>
+        <div class="input-panel">
+            <div id="map-select" style="height: 400px; width: 100%; border: 1px solid #334155;"></div>
+            <div>
+                <form id="scanForm">
+                    <label>COORDINATES</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="text" id="lat" placeholder="Lat" readonly>
+                        <input type="text" id="lng" placeholder="Lng" readonly>
+                    </div>
+                    <label>HYDROPHONE AUDIO</label>
+                    <input type="file" id="audioFile" accept="audio/*">
+                    <label>SURFACE IMAGERY</label>
+                    <input type="file" id="imageFile" accept="image/*">
+                    <br><br>
+                    <button type="button" onclick="startScan()">INITIATE THREAT SCAN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- PAGE 2 -->
+    <div id="page-2" class="hidden loader-box">
+        <h1>PROCESSING SENSOR DATA</h1>
+        <p>Running TensorFlow Audio CNN... Running YOLOv8 Object Detection...</p>
+        <div class="bar-container"><div class="bar-fill" id="loaderBar"></div></div>
+        <p id="logText" style="color: #38bdf8; font-family: monospace;">> Initializing modules...</p>
+    </div>
+    <!-- PAGE 3 -->
+    <div id="page-3" class="hidden">
+        <div style="display:flex; justify-content:space-between;">
+            <h2><i class="fas fa-chart-pie"></i> Tactical Debrief Report</h2>
+            <button onclick="location.reload()" style="width: auto;">NEW SCAN</button>
+        </div>
+        <div id="cards-container" class="grid-4"></div>
+        <div class="charts-area">
+            <div class="chart-box"><h3>Threat Intensity Map</h3><div id="result-map" style="height: 300px;"></div></div>
+            <div class="chart-box"><h3>Audio vs Visual Risk</h3><canvas id="riskChart"></canvas></div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
