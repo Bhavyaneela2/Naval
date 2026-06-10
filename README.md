@@ -7,7 +7,9 @@ AI-powered Naval Threat Detection and Surveillance System using:
 - YOLOv8
 - Librosa Audio Analysis
 - Leaflet Maps
-- Chart.js
+- Chart.js<img width="1920" height="1128" alt="Screenshot 2026-06-10 135551" src="https://github.com/user-attachments/assets/c8c01b4c-3934-4f37-858d-b675b4a66683" />
+<img width="1920" height="1128" alt="Screenshot 2026-06-10 135528" src="https://github.com/user-attachments/assets/56ad0b15-1ac0-4b78-adca-c2ecf0c6f367" />
+
 - Computer Vision
 - Audio Signal Processing
 
