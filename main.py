@@ -13,18 +13,12 @@ import webbrowser
 from threading import Timer
 
 app = FastAPI()
-
 # ---------------- OPEN BROWSER AUTOMATICALLY ----------------
 def open_browser():
     webbrowser.open("http://localhost:8000/static/index.html")
-
 # ---------------- ROUTES ----------------
 @app.get("/")
-async def root():
-    return FileResponse("static/index.html")
-
-@app.get("/static/index.html")
-async def static_index():
+def root():
     return FileResponse("static/index.html")
 
 # ---------------- STATIC FILES ----------------
@@ -204,7 +198,7 @@ async def scan_area(
 
 # ---------------- MAIN ----------------
 if __name__ == "__main__":
-    Timer(1, open_browser).start()
+    # Timer(1, open_browser).start()
 
     uvicorn.run(
         app,
