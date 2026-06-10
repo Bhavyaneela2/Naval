@@ -37,6 +37,8 @@ AI-powered Naval Threat Detection and Surveillance System using:
 - JavaScript
 - Leaflet.js
 - Chart.js
+<img width="1920" height="1128" alt="Screenshot 2026-06-10 135551" src="https://github.com/user-attachments/assets/b9cbea64-8631-4240-97f4-4da11e0def7c" />
+<img width="1920" height="1128" alt="Screenshot 2026-06-10 135528" src="https://github.com/user-attachments/assets/8bbd072d-cecb-4ed1-b0e4-bd9829092365" />
 
 ## Project Structure
 
